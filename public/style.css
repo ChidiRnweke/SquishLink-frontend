@@ -15,8 +15,8 @@
 
 .dark-theme {
   --primary-color: #BB86FC;
-  --accent-color: #03DAC5;
   --secondary-color: #C792EA;
+  --accent-color: #03DAC5;
   --background-color: #1F1B24;
   --background-alt: hsl(0, 0%, 17.25%, 75%);
   --foreground-color: #ffffff;

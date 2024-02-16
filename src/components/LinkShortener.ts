@@ -82,7 +82,11 @@ color: var(--primary-color);
     transition: background-color 0.3s, transform 0.2s;
     max-width: 100%;
     padding: 0.7rem 0.7rem;
+  }
 
+  button:disabled {
+    background-color: var(--subtle-color);
+    cursor:help;
   }
 
   button:hover {
@@ -131,20 +135,22 @@ color: var(--primary-color);
 </style>
 
 <section>
-  <label for="link-input">Place your data here.</label> 
+  <label for="link-input">Squish your link here.</label>
   <div class="input-group">
-    <input type="text" id="link-input" placeholder="chidirnweke.github.io/blog">
-    <button type="button">Squish</button>
+    <input type="text" id="link-input" placeholder="chidinweke.be">
+    <button type="button" disabled>Squish</button>
   </div>
-  <output></output>       
-</section>
+  <output></output>
+  </section>
 `
 
 
 class LinkShortener extends HTMLElement {
   handler: Handler;
+  private linkValidator: RegExp;
   public constructor() {
     super()
+    this.linkValidator = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g
     this.attachShadow({ mode: "open" });
     this.shadowRoot!.innerHTML = html;
     this.handler = this.getHandler();
@@ -163,8 +169,19 @@ class LinkShortener extends HTMLElement {
   private addEventListeners() {
     const button = getElementOrThrow<HTMLButtonElement>(this.shadowRoot!, "button");
     const input = getElementOrThrow<HTMLInputElement>(this.shadowRoot!, "input");
+    input.addEventListener("input", () => button.disabled = !this.linkValidator.test(input.value))
+
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        if (!button.disabled) {
+          this.submitData(input.value.trim());
+        }
+      }
+    })
     button.addEventListener("click", async () => this.submitData(input.value));
   }
+
 
   private async submitData(input: string): Promise<void> {
     const response = await this.handler.shorten(input);
