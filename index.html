@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/dark-mode-toggle-component@1.0.0/dist/index.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="src/components/LinkShortener.ts"></script>
+  <title>SquishLink</title>
+</head>
+
+<body>
+  <header>
+    <a href="chidirnweke.github.io/blog">Blog</a>
+    <dark-mode-toggle></dark-mode-toggle>
+
+  </header>
+
+  <main>
+    <section class="header-section">
+      <h1>SquishLink</h1>
+      <p>Making your links <span>smaller</span></p>
+    </section>
+    <link-shortener data-handler="fetch"></link-shortener>
+  </main>
+  <footer>
+    <section class="contact">
+      Reach me on
+      <external-clickable-image href="https://www.linkedin.com/in/chidi-nweke-a3835a201/">
+        <img src="/images/linkedin.png" slot="image">
+      </external-clickable-image>
+      <external-clickable-image href="https://www.instagram.com/chidinweke96/">
+        <img src="/images/instagram.png" slot="image">
+      </external-clickable-image>
+      <external-clickable-image href="https://github.com/ChidiRnweke/" id="github">
+        <img src="/images/github.png" data-alt-src="/blog/images/github-dark.png" slot="image" class="dark-toggle">
+      </external-clickable-image>
+    </section>
+    With ❤️ by Chidi Nweke.
+  </footer>
+</body>
+
+</html>

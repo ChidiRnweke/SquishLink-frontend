@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #1a73e8;
+  --secondary-color: #4db8ac;
+  --accent-color: #0f62fe;
+  --background-color: #ffffff;
+  --background-alt: hsl(0, 0%, 94.12%, 75%);
+  --foreground-color: #333333;
+  --subtle-color: #606060;
+  --error-color: #dc3545;
+  --logo-bg: transparent;
+  --background: url("/images/bg.svg")
+}
+
+.dark-theme {
+  --primary-color: #BB86FC;
+  --accent-color: #03DAC5;
+  --secondary-color: #C792EA;
+  --background-color: #1F1B24;
+  --background-alt: hsl(0, 0%, 17.25%, 75%);
+  --foreground-color: #ffffff;
+  --subtle-color: #b0b0b0;
+  --error-color: #ff6b6b;
+  --background: url("/images/bg-dark.svg")
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  margin-left: 2rem;
+  margin-right: 2rem;
+  background-image: var(--background);
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  place-items: center;
+  padding: 1rem 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.header-section p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.header-section {
+  animation: fadeIn ease-in 1s;
+  animation-fill-mode: forwards;
+}
+
+
+main {
+  margin-bottom: 5rem;
+  display: grid;
+}
+
+p span {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+}
+
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: var(--subtle-color);
+}
+
+#header-section {
+  text-align: center;
+}
+
+link-shortener {
+  border: 1px solid var(--subtle-color);
+  max-width: 800px;
+  display: inline-flex;
+  place-self: center;
+  border-radius: 5px;
+  background-color: var(--background-alt);
+
+}
+
+
+footer .contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 1rem 0.5rem 1rem;
+  gap: 1rem;
+}
+
+footer .contact img {
+  max-width: 25px;
+  height: auto;
+  display: block;
+}
+
+@media (min-width: 750px) {}
+
+@media (min-width: 1100px) {
+  body {
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
+
+  h1 {
+    font-size: 5rem;
+    text-align: center;
+  }
+
+  .header-section p {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  p span {
+    font-size: 1.5rem;
+  }
+
+}
