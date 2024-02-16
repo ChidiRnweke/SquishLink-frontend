@@ -150,7 +150,7 @@ class LinkShortener extends HTMLElement {
   private linkValidator: RegExp;
   public constructor() {
     super()
-    this.linkValidator = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g
+    this.linkValidator = new RegExp("([a-zA-Z0-9]+://)?([a-zA-Z0-9_]+:[a-zA-Z0-9_]+@)?([a-zA-Z0-9.-]+\\.[A-Za-z]{2,4})(:[0-9]+)?(/.*)?");
     this.attachShadow({ mode: "open" });
     this.shadowRoot!.innerHTML = html;
     this.handler = this.getHandler();
@@ -211,5 +211,3 @@ class LinkShortener extends HTMLElement {
     }
   }
 }
-
-customElements.define('link-shortener', LinkShortener);
