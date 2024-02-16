@@ -10,7 +10,7 @@
   --subtle-color: #606060;
   --error-color: #dc3545;
   --logo-bg: transparent;
-  --background: url("/images/bg.svg")
+  --background: url("./images/bg.svg")
 }
 
 .dark-theme {
@@ -22,7 +22,7 @@
   --foreground-color: #ffffff;
   --subtle-color: #b0b0b0;
   --error-color: #ff6b6b;
-  --background: url("/images/bg-dark.svg")
+  --background: url("./images/bg-dark.svg")
 }
 
 body {

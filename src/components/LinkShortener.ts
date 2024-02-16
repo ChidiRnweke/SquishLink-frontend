@@ -5,7 +5,7 @@ type Handler = { shorten(input: string): Promise<ShortenResponse> }
 type ShortenResponse = { success: boolean, body: string }
 
 const fetchHandler = {
-  url: "https://chidinweke.be/squish",
+  url: "https://chidinweke.be/s",
   shorten: async (inputLink: string): Promise<ShortenResponse> => {
     try {
       const res = await fetch(fetchHandler.url, {
