@@ -17,7 +17,7 @@ const fetchHandler = {
         throw new Error(`HTTP error! status: ${res.status}`);
       }
       const data = await res.json();
-      return { success: true, body: data.shortenedLink || JSON.stringify(data) };
+      return { success: true, body: data.link || JSON.stringify(data) };
     } catch (error) {
       return { success: false, body: error instanceof Error ? error.message : "An unknown error occurred" };
     }
