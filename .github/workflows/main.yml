@@ -32,7 +32,6 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            mkdir -p /var/www/squish/
             rm -rf /var/www/squish/* 
             tar --no-same-permissions --no-overwrite-dir -xzvf ~/build.tar.gz -C /var/www/squish 
             rm ~/build.tar.gz
