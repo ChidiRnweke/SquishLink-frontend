@@ -211,3 +211,4 @@ class LinkShortener extends HTMLElement {
     }
   }
 }
+customElements.define('link-shortener', LinkShortener);
