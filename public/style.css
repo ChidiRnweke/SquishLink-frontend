@@ -62,6 +62,11 @@ a {
   font-size: 1.5rem;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -75,6 +80,17 @@ a {
 .header-section {
   animation: fadeIn ease-in 1s;
   animation-fill-mode: forwards;
+}
+
+
+.error-section h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.error-section p {
+  font-size: 1.3rem;
+  text-align: center;
 }
 
 

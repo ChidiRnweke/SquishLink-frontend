@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/dark-mode-toggle-component@latest/dist/index.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <script type="module" src="/src/components/ExternalClickableImage.ts"></script>
+    <title>SquishLink</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+</head>
+
+<body>
+    <header>
+        <a href="chidinweke.be">Home</a>
+        <dark-mode-toggle></dark-mode-toggle>
+
+    </header>
+
+    <main>
+        <section>
+            <h1>SquishLink</h1>
+        </section>
+        <section class="error-section">
+            <h2>Oops, looks like your link wasn't found.</h2>
+            <p>Links are only valid for 3 days. <a href="/squish">Click here</a> to generate a new one.</p>
+        </section>
+    </main>
+    <footer>
+        <section class="contact">
+            Reach me on
+            <external-clickable-image href="https://www.linkedin.com/in/chidi-nweke-a3835a201/">
+                <img src="/images/linkedin.png" slot="image">
+            </external-clickable-image>
+            <external-clickable-image href="https://www.instagram.com/chidinweke96/">
+                <img src="/images/instagram.png" slot="image">
+            </external-clickable-image>
+            <external-clickable-image href="https://github.com/ChidiRnweke/" id="github">
+                <img src="/images/github.png" data-alt-src="/squish/images/github-dark.png" slot="image"
+                    class="dark-toggle">
+            </external-clickable-image>
+        </section>
+        With ❤️ by Chidi Nweke.
+    </footer>
+</body>
+
+</html>
