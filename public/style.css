@@ -29,13 +29,59 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--background-color);
   color: var(--foreground-color);
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   background-image: var(--background);
 }
 
 body {
   height: 90vh;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  place-items: center;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  padding: 1rem 0;
+}
+
+strong {
+  color: var(--accent-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 100%;
+  place-items: center;
+}
+
+
+
+nav a:hover {
+  transform: scale(1.05);
+  color: var(--primary-color);
+  text-decoration: underline;
+
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--foreground-color);
+  transition: color 0.3s ease;
+  word-wrap: break-word;
+
 }
 
 header {
@@ -55,15 +101,6 @@ h1 {
 .header-section p {
   font-size: 1.5rem;
   text-align: center;
-}
-
-a {
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  font-weight: 900;
-  font-size: 1.5rem;
 }
 
 a:hover {
@@ -150,8 +187,8 @@ footer .contact img {
 
 @media (min-width: 1100px) {
   body {
-    margin-left: 8rem;
-    margin-right: 8rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
   }
 
   h1 {
