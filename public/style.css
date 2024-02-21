@@ -13,7 +13,7 @@
   --background: url("./images/bg.svg")
 }
 
-.dark-theme {
+.dark {
   --primary-color: #BB86FC;
   --secondary-color: #C792EA;
   --accent-color: #03DAC5;
